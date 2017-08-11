@@ -1,4 +1,4 @@
-# JavascriptWay
+# JavaScript Way
 
 So, we have the web, browsers, HTML, CSS... and the world start spinning. But we needed a cute, little, light, easy and fast language to give life to our new web page. And so, JavaScript was born.
 
