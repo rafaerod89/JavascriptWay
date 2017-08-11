@@ -17,4 +17,3 @@ This project aint for beginners, instead is for:
 
 So, if this project is for you then welcome to
 ## Basic Javascript for Senior JavaScript programmers.
-------
