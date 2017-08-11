@@ -12,8 +12,8 @@ This project aint for beginners, instead is for:
     * Clarify some aspects of this language that are making you crazy.
     * Stop making the fool out of yourself with every PR you make with this new millennials developers you're working with.
 
-**Companies who wants to:**
-- Know how to recruit this new JavaScript Experts or JavaScript Senior Developers, I mean, what should this guys know right?
+  * **Companies who wants to:**
+    * Know how to recruit this new JavaScript Experts or JavaScript Senior Developers, I mean, what should this guys know right?
 
 So, if this project is for you then welcome to
 
@@ -23,4 +23,21 @@ Basic Javascript for Senior JavaScript programmers.
 Work In Progress..
 ------
 
-####Table of Contents
+
+Table of Contents
+-----------------
+
+  * [Intro](#intro)
+    * [Pros](#pros)
+    * [Cons](#cons)
+  * [Events and timing](#events-and-timing)
+  * [Use strict](#use-strict)
+  * [Scope](#scope)
+    * [Closures](#pros)
+
+------
+
+Installation
+============
+
+   
