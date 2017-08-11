@@ -17,12 +17,7 @@ This project aint for beginners, instead is for:
 
 So, if this project is for you then welcome to
 
-Basic Javascript for Senior JavaScript programmers.
-------
-
-Work In Progress..
-------
-
+### Basic Javascript for Senior JavaScript programmers.
 
 Table of Contents
 -----------------
@@ -35,6 +30,7 @@ Table of Contents
   * [Scope](#scope)
     * [Closures](#pros)
 
+Work In Progress..
 ------
 
 Installation
