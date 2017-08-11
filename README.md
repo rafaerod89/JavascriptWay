@@ -40,21 +40,49 @@ Work In Progress..
 Intro
 ============
 
-Intro content text
+What is JavaScript? We're answering this question with the help of the [Stanford University](http://web.stanford.edu/class/cs98si/slides/overview.html)
+
+JavaScript is primarily a client-side language. JavaScript started at Netscape, a web browser developed in the 1990s. A webpage can contain embedded JavaScript, which executes when a user visits the page. The language was created to allow web developers to embed executable code on their webpages, so that they could make their webpages interactive, or perform simple tasks. Today, browser scripting remains the main use-case of JavaScript.
+
+JavaScript’s syntax is heavily inspired by C++ and Java. If you have experience in C++ or Java, JavaScript’s syntax will seem familiar to you. However, the inner workings of JavaScript is closer to a dynamically-typed, interpreted language such as Python or Ruby.
+
+JavaScript is an interpreted language, not a compiled language. In contrast to C++ or Java, JavaScript has no compilation step. Instead, an interpreter in the browser reads over the JavaScript code, interprets each line, and runs it. More modern browsers use a technology known as Just-In-Time (JIT) compilation, which compiles JavaScript to executable bytecode just as it is about to run.
+
+JavaScript is a very useful language. JavaScript runs in every web browser, out of the box. A JavaScript application runs on every device, whereas a desktop or mobile application runs only on the application it is targeted to (Windows, Mac OSX, Linux, iPhone, Android). This allows you to write cross-platform apps in a really easy way. JavaScript’s role has also expanded significantly. Platforms such as Node.js allow developers to run JavaScript server-side. It is now possible to create entire web applications in which both client-side and server-side logic is written in JavaScript.
 
 
 
 Pros
 ----
 
-Pros content text
+  * Performance
+    * Really fast language
+    * Reduces the load on the server making operations on the frontend
+  * Language
+    * Interpreted language
+    * Loosely typed
+    * No need of function overloading
+  * Object instead of Classes
+    * Can add a property on a object at any time at it will affect every implementation
+    * Everything is a object, functions included
+  * Semicolons are handled automatically 
+  * Async
+  * Simple
+  * Event-Prograding
+  * Platform independent: Run in every web browser out of the box and Platforms such as Node.js allow developers to run JavaScript server-side and so they can go full stack with the language.
+  * Helps creating rich UI and great UX
 
 
 
 Cons
 ----
 
-Cons content text
+  * JavaScript Fatigue
+  * Is really easy to get started, but if the user has no solid knowledge of the language the resulting product can be harmful
+    * Bad use of the Scope
+    * Bad use of variables
+    * Bad use of mutable objects
+  * Single inheritance only
 
 
 
