@@ -16,4 +16,4 @@ This project aint for beginners, instead is for:
 - Know how to recruit this new JavaScript Experts or JavaScript Senior Developers, I mean, what should this guys know right?
 
 So, if this project is for you then welcome to
-###### Basic Javascript for Senior JavaScript programmers.
+## Basic Javascript for Senior JavaScript programmers.
