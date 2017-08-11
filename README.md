@@ -8,9 +8,9 @@ For this reason companies are starting to need JavaScript Experts, and a lot of 
 
 This project aint for beginners, instead is for:
 
-**You Senior Developer who wants to:**
-- Clarify some aspects of this language that are making you crazy.
-- Stop making the fool out of yourself with every PR you make with this new millennials developers you're working with.
+  * **You Senior Developer who wants to:**
+    * Clarify some aspects of this language that are making you crazy.
+    * Stop making the fool out of yourself with every PR you make with this new millennials developers you're working with.
 
 **Companies who wants to:**
 - Know how to recruit this new JavaScript Experts or JavaScript Senior Developers, I mean, what should this guys know right?
@@ -21,3 +21,6 @@ Basic Javascript for Senior JavaScript programmers.
 ------
 
 Work In Progress..
+------
+
+####Table of Contents
