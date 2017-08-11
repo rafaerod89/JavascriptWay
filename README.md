@@ -33,7 +33,59 @@ Table of Contents
 Work In Progress..
 ------
 
-Installation
+
+
+
+
+Intro
 ============
 
-   
+Intro content text
+
+
+
+Pros
+----
+
+Pros content text
+
+
+
+Cons
+----
+
+Cons content text
+
+
+
+
+
+Events and timing
+============
+
+Events and timing content text
+
+
+
+
+
+Use strict
+============
+
+Use strict content text
+
+
+
+
+
+Scope
+============
+
+Scope content text
+
+
+
+Closures
+----
+
+Closures content text
