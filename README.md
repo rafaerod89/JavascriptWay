@@ -29,6 +29,9 @@ Table of Contents
   * [Use strict](#use-strict)
   * [Scope](#scope)
     * [Closures](#pros)
+  * [Reference](#reference)
+    * [Oficial docs](#oficial-docs)
+    * [Essential JavaScript Interview Questions](#essential-javascript-interview-questions)
 
 Work In Progress..
 ------
@@ -118,3 +121,26 @@ Closures
 ----
 
 Closures content text
+
+
+
+
+
+Reference
+============
+
+Reference content text
+
+
+
+Oficial docs
+----
+
+Oficial content text
+
+
+
+Essential JavaScript Interview Questions
+----
+
+Essential JavaScript Interview Questions content text
