@@ -83,6 +83,7 @@ Cons
     * Bad use of variables
     * Bad use of mutable objects
   * Single inheritance only
+  * Some of the Pros can become Cons depending on the project and/or developers.
 
 
 
