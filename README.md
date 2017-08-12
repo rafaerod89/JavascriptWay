@@ -28,7 +28,9 @@ Table of Contents
   * [Events and timing](#events-and-timing)
   * [Use strict](#use-strict)
   * [Scope](#scope)
-    * [Closures](#pros)
+    * [Closures](#closures)
+    * [Hoisting](#hoisting)
+    * [This](#this)
   * [Reference](#reference)
     * [Oficial docs](#oficial-docs)
     * [Essential JavaScript Interview Questions](#essential-javascript-interview-questions)
@@ -142,7 +144,70 @@ Use strict content text
 Scope
 ============
 
-Scope content text
+We must understand how variable scope, closures, variable hoisting and `this` value work in JavaScript, if want to understand JavaScript well. These concepts may seem straightforward; they are not. Some important subtleties exist that we must understand, if we want to thrive and excel as JavaScript developers.
+
+First we need to remenber that **in JavaScript, objects and functions are also variables**. And so, scope is the set of variables, objects, and functions you have access to.
+
+Unlike most programming languages, JavaScript does not have block-level scope (variables scoped to surrounding curly brackets); instead, JavaScript has function-level scope: **The scope changes inside functions**.
+
+### Variable Scope
+A variable’s scope is the context in which the variable exists. The scope specifies from where you can access a variable and whether you have access to the variable in that context. Variables have either a local scope or a global scope.
+
+### Local Variables (Function-level scope)
+  * Variables declared within a function are local variables and are only accessible within that function or by functions inside that function.
+  * The lifetime of a JavaScript variable starts when it is declared and in the case of local variables they are deleted when the function is completed.
+
+### Global Variables
+  * Global Variables are bad, never use them. No matter what your trying to accomplish, there are better ways of doing it.
+  * If you declare a global variable and a local variable with the same name, the local variable will have priority when you attempt to use the variable inside a function (local scope)
+  * In a web browser, global variables are deleted when you close the browser window (or tab), but remains available to new pages loaded into the same window.
+  * If is not a local Variable, then it's a Glogal Variable. That simple.
+
+
+So, **Declaring a variable outside a function scope should automatically add it to the global scope?**
+
+Well.. Yes and no.
+
+In fact both this sceneries declare a variable in the global scope:
+
+  * Declaring a variable outside a function scope in a script
+```
+<script>
+    var x = 123;
+
+    // The current scope is global
+    console.log('x' in window); // true
+</script>
+```
+
+  * Assigning a value to a undeclared variable
+```
+<script>
+    function aux() {
+         x = 123
+    }
+
+    // The current scope is global
+    console.log('x' in window); // true
+</script>
+```
+
+But with ES6 we now have modules (import and export) and, as you can see in here -> http://exploringjs.com/es6/ch_modules.html . Every module has it's own scope so, not even something like this will be added to the global scope:
+
+```
+<script type="module">
+    import $ from 'lib/jquery';
+    var x = 123;
+
+    // The current scope is not global
+    console.log('$' in window); // false
+    console.log('x' in window); // false
+</script>
+```
+
+And just so you remember.. IT'S BAD TO SET VARIABLES IN THE GLOBAL SCOPE.
+
+
 
 
 
