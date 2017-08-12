@@ -211,10 +211,62 @@ And just so you remember.. IT'S BAD TO SET VARIABLES IN THE GLOBAL SCOPE.
 
 
 
-Closures
+Hoisting
 ----
 
-Closures content text
+Hoisting is a term you will not find used in any normative specification prose prior to ECMAScript® 2015 Language Specification. Hoisting was thought up as a general way of thinking about how execution context (specifically the creation and execution phases) work in JavaScript. But, hoisting can lead to misunderstandings. For example, hoisting teaches that variable and function declarations are physically moved to the top of your coding, but this is not what happens at all. What does happen is that variable and function declarations are put into memory during the compile phase, but stays exactly where you typed it in your coding.
+
+Learn moreEdit
+
+Technical example
+One of the advantages of JavaScript putting function declarations into the memory before it executes any code segment is that it allows you to use a function before you declare it in your code. For example:
+
+function catName(name) {
+  console.log("My cat's name is " + name);
+}
+
+catName("Tigger");
+/*
+The result of the code above is: "My cat's name is Tigger"
+*/
+The above code snippet is how you would expect to write the code for it to work. Now, let's see what happens when we call the function before we write it:
+
+catName("Chloe");
+
+function catName(name) {
+  console.log("My cat's name is " + name);
+}
+/*
+The result of the code above is: "My cat's name is Chloe"
+*/
+Even though we call the function in our code first, before the function is written, the code still works. This is because of how context execution works in JavaScript.
+
+Hoisting works well with other data types and variables as well. The variables can be initialized and used before declared. But they cannot be used without initialization.
+
+Technical example
+num = 6;
+num + 7;
+var num; 
+/* gives no errors as long as num is declared*/
+JavaScript only hoists declarations, not initializations. If you are using a variable that is declared and initialized after using it, the value will be undefined. The below two examples demonstrate the same behavior.
+
+var x = 1; // Initialize x
+console.log(x + " " + y); // '1 undefined'
+var y = 2;
+
+
+// The following code will behave the same as the previous code: 
+var x = 1; // Initialize x
+var y; // Declare y
+console.log(x + " " + y); // '1 undefined'
+y = 2; // Initialize y
+
+
+
+
+
+
+
 
 
 
