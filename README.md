@@ -31,14 +31,14 @@ Table of Contents
     * [Closures](#closures)
 
 
-  * [Call by Sharing](#call-by-sharing)
+  * [Call by Sharing (Coming soon)](#call-by-sharing)
+
+
   * [Prototypal Inheritance](#prototypal-inheritance)
   * [Operators](#operators)
     * [Comparison](#comparison)
     * [Comma](#comma)
   * [Immutable](#immutable)
-
-
   * [Semicolons](#semicolons)
   * [Use strict](#use-strict)
   * [Optimizing JavaScript code](#optimizing-javascript-code)
@@ -505,25 +505,27 @@ To read more about this read the `Optimizing JavaScript code` section.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Call by Sharing
 ============
 
-Call by Sharing content text
+In JavaScript, all variables refers to values. So, when we pass a variable to a function, the argument is a value which is itself a reference. This is called call-by-sharing.
+
+When we pass a variable to a function, a new variable is created in function scope which refers to the passed value. In JavaScript, objects are mutable. While, strings and numbers are immutable. So, changes to the object’s properties (mutations) in function scope are visible to the caller’s scope because of shared reference, but assignment of the new value do not influence external object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -533,6 +535,21 @@ Prototypal Inheritance
 ============
 
 Prototypal Inheritance content text
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -548,14 +565,46 @@ JavaScript, as any other major language, has all kind of operators, but we're on
 Comparison
 ----
 
-Comparison content text
+JavaScript provides three different value-comparison operations:
+  * **strict equality** (or "triple equals" or "identity") using ===,
+  * **loose equality** ("double equals") using ==,
+  * **Object.is** (new in ECMAScript 2015).
+
+But excluding some border cases, normally you would be using the first two so we're digging a little deeper on those.
+
+**NOTE:** `Object.is` will behave the same way as triple equals, but with special handling for NaN and -0 and +0 so that the last two are not said to be the same, while Object.is(NaN, NaN) will be true. (Comparing NaN with NaN ordinarily—i.e., using either double equals or triple equals—evaluates to false, because IEEE 754 says so.)
+
+
+#### Strict equality using ===
+
+Strict equality compares two values for equality. Neither value is implicitly converted to some other value before being compared. If the values have different types, the values are considered unequal. Otherwise, if the values have the same type and are not numbers, they're considered equal if they have the same value. Finally, if both values are numbers, they're considered equal if they're both not NaN and are the same value, or if one is +0 and one is -0.
+
+
+#### Loose equality using ==
+
+Loose equality compares two values for equality, after converting both values to a common type.  After conversions (one or both sides may undergo conversions), the final equality comparison is performed exactly as === performs it.  Loose equality is symmetric: A == B always has identical semantics to B == A for any values of A and B (except for the order of applied conversions).
+
+If you want to know more about how the equality comparison is performed you can check it out here -> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness
 
 
 
 Comma
 ----
 
-Comma content text
+The comma operator evaluates each of its operands (from left to right) and returns the value of the last operand.
+
+You can use the comma operator when you want to include multiple expressions in a location that requires a single expression. The most common usage of this operator is to supply multiple parameters in a for loop.
+
+**Example:**
+
+If a is a 2-dimensional array with 10 elements on each side, the following code uses the comma operator to increment two variables at once.
+
+The following code prints the values of the diagonal elements in the array:
+
+```
+for (var i = 0, j = 9; i <= 9; i++, j--)
+  console.log('a[' + i + '][' + j + '] = ' + a[i][j]);
+```
 
 
 
@@ -564,22 +613,33 @@ Comma content text
 Immutable
 ============
 
-Immutable content text
+**What's immutability?**
 
+The text-book definition of mutability is liable or subject to change or alteration. In programming, we use the word to mean objects whose state is allowed to change over time. An immutable value is the exact opposite – after it has been created, it can never change.
 
+**Then, why is immutability important?**
 
+Well, mutating data can produce code that’s hard to read and error prone. For primitive values (like numbers and strings), it is pretty easy to write ‘immutable’ code, because primitive values cannot be mutated themselves. Variables containing primitive types always point to the actual value. If you pass it to another variable, the other variable get’s a fresh copy of that value.
 
+Now, Objects (Remember that an Array is also an Object) are a different story, if you would pass an object to another variable, they will both refer to the same object. If you would then mutate the object from either variable, they will both reflect the changes.
 
+**The problem**
+```
+const person = {
+  name: 'John',
+  age: 28
+}
+const newPerson = person
+newPerson.age = 30
+console.log(newPerson === person) // true
+console.log(person) // { name: 'John', age: 30 }
+```
 
+When we change `newObj`, we also automatically change the old `obj` variable. This is because they refer to the same object. In most cases this is unwanted behaviour and bad practice, but remember that every project is different and so are they answers, meaning, mutating data might not be a problem to your particular project, instead, it might be a plus. So before you start preaching about immutability know that JavaScript is not like other languages and neither do the problems you might be facing, so know your problem and know your options before you start.
 
+If you want/need to work with immutable objects know that it's AWESOME and a lot of great libraries use them, for example, Redux. With this said, there are a lot of different ways you can achieve this, you might go with an [external library](http://facebook.github.io/immutable-js/) or you may try to implement them using native ES6 (have [this](https://wecodetheweb.com/2016/02/12/immutable-javascript-using-es6-and-beyond/) as an example).
 
-
-
-
-
-
-
-
+External libraries usually have some performance enhancements that makes them production/battle ready, but keep in mind that Immutable libraries usually have the tradeback that you just don't use them in one file.. instead, they tend to extend to your WHOLE app, meaning that getting rid of them along the way might be difficult. But on a lot of cases they're worth it, just have it in mind.
 
 
 
