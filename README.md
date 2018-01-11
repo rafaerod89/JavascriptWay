@@ -29,12 +29,13 @@ Table of Contents
   * [Scope](#scope)
     * [Hoisting](#hoisting)
     * [Closures](#closures)
+  * [Anon Functions](#anon-functions)
 
 
-  * [Call by Sharing (Coming soon)](#call-by-sharing)
+  * [Call by Sharing](#call-by-sharing)
 
 
-  * [Prototypal Inheritance](#prototypal-inheritance)
+  * [Prototypal Inheritance (Coming soon)](#prototypal-inheritance)
   * [Operators](#operators)
     * [Comparison](#comparison)
     * [Comma](#comma)
@@ -500,6 +501,32 @@ console.log(cruiseID.id); // 101
 It is unwise to unnecessarily create functions within other functions if closures are not needed for a particular task, as it will negatively affect script performance both in terms of processing speed and memory consumption.
 
 To read more about this read the `Optimizing JavaScript code` section.
+
+
+
+
+
+Anon Functions
+============
+
+Anon Functions or Anonymous Functions in JavaScript, just as they their name hints at, have no identity. They are functions that are created, used and discarded just as quickly.
+
+We use anonymous functions all the time is JavaScript, and there are multiple daily uses for them (we can see one in the anonymous closure example on the previous section), mostly as callback functions to execute some quick functionality. For example the arrow functions inside the `then` and `catch` on the next example:
+
+```
+function printPhone (model, brand, callback) {
+    // REQUEST THE ACTUAL PHONE TO AN EXTERNAL ENDPOINT
+    dataProvider(model, brand)
+    .then(() => {
+    	console.log('we got the phone!')
+    })
+    .catch(() => {
+    	console.log('there's no phone.....')
+    })
+}
+```
+
+As you probably noticed so far, there are two important thing in here: is probable that you were using Anon Functions even if you were not familiar with the concept and.. Anon Functions are AWESOME. With that said, they are not perfect and they could bring some misunderstanding a buggy behaviour to our developments as you can see in here -> http://johnnyji.me/react/2016/06/27/why-arrow-functions-murder-react-performance.html
 
 
 
